@@ -130,5 +130,34 @@ let TVShell = {
             return { NoBackToMe: false };
         }
     },
-    
-}
+    /*
+        Sample network info.
+    */
+    WirelessAdapter: {
+        Settings: {
+            SSID: "My Test Network"
+        },
+        /*
+            Returns a sample OK (0) status once connected.
+        */
+        CheckStatus: function() {
+            return 0;
+        }
+    },
+    EthernetAdapter: {
+        /*
+            Returns a sample OK (0) status once connected.
+            Will use ConnectError_NoLine to simulate an unplugged device.
+        */
+        CheckStatus: function() {
+            return 0;
+        }
+    },
+    /*
+        Would normally save network info. Since we only have one example
+        network in the simulation, we simply log when a network save req is called.
+    */
+    Save: function() {
+        console.log("[ConnectionManager.Save] called");
+    }
+};
