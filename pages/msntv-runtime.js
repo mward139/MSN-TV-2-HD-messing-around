@@ -161,3 +161,7 @@ let TVShell = {
         console.log("[ConnectionManager.Save] called");
     }
 };
+
+// Connection type constants:
+const MSNIAModemProviderName = "phone";
+const BYOAEthernetProviderName = "broadband";
