@@ -165,3 +165,29 @@ let TVShell = {
 // Connection type constants:
 const MSNIAModemProviderName = "phone";
 const BYOAEthernetProviderName = "broadband";
+
+/*
+    Allows the user to choose a connection type.
+    @param givenConnectionType The connection type chosen by the user.
+*/
+function SetConnectionType(givenConnectionType) {
+    UsingBroadband = (givenConnectionType === BYOAEthernetProviderName);
+    UsingWireless = UsingBroadband;
+    console.log("[SetConnectionType]", givenConnectionType, { UsingBroadband, UsingWireless });
+}
+
+/*
+    Simulated login / registration.
+*/
+function LoginToService(givenContext) {
+    // Logs the givenContext.
+    console.log("[LoginToService] context =", givenContext);
+    if (UsingBroadband) {
+        window.location.href = "ConnectedWireless.html"
+    }
+    // Simulating that the box isn't plugged into a phone line.
+    else {
+        parameters.ErrorCode = ConnectError_NoDialTone;
+        window.location.href = "ConnectionError.html";
+    }
+}
