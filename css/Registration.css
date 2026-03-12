@@ -15,7 +15,7 @@ A:active {text-decoration: none; color:#003471}
 body {
     background-repeat: no-repeat;
     margin: 0;
-    background-image: url(msntv:/Registration/images/bgimage.jpg);
+    background-image: url("../images/bgimage.jpg");
     overflow: hidden;
     font-family: 'Segoe TV', Segoe UI, Tahoma, Arial, sans-serif;
 }
